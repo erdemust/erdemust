@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Efektler ve Örnekler</title>
+</head>
+<body>
+  <h1>SVG Efektler ve Örnekler</h1>
+
+  <!-- Gaussian Blur (Bulanıklık) Efekti: Kırmızı -->
+  <svg height="100" width="100">
+    <defs>
+      <filter id="f1" x="0" y="0">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+      </filter>
+    </defs>
+    <rect width="90" height="90" fill="red" filter="url(#f1)" />
+  </svg>
+
+  <!-- Gaussian Blur (Bulanıklık) Efekti: Sarı -->
+  <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="f1" x="0" y="0">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+      </filter>
+    </defs>
+    <rect width="90" height="90" fill="yellow" filter="url(#f1)" />
+  </svg>
+
+  <!-- Desen (Pattern) Kullanımı -->
+  <svg width="400" height="110" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="patt1" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+        <circle cx="10" cy="10" r="10" fill="red" />
+      </pattern>
+    </defs>
+    <rect width="200" height="100" x="0" y="0" stroke="black" fill="url(#patt1)" />
+  </svg>
+
+  <!-- Transform ile Taşıma -->
+  <svg width="200" height="100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="5" y="5" width="40" height="40" fill="blue" />
+    <rect x="5" y="5" width="40" height="40" fill="red" transform="translate(50 50)" />
+  </svg>
+
+  <!-- ClipPath ile Alt Kesim -->
+  <svg width="200" height="100" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <clipPath id="cut-bottom">
+        <rect x="0" y="0" width="200" height="50" />
+      </clipPath>
+    </defs>
+    <circle cx="100" cy="100" r="100" fill="red" clip-path="url(#cut-bottom)" />
+  </svg>
+
+</body>
+</html>
