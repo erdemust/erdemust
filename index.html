@@ -1,28 +1,54 @@
-<html>
-<h1> Son Hali </h1>
- <svg width="200" height="200" viewBox="-100 -100 200 200">
-  <clipPath id="ball">
-    <circle cx="0" cy="20" r="70" />
-  </clipPath>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Top Çizimi (Geliştirilmiş)</title>
+</head>
+<body>
+  <h1>Geliştirilmiş SVG Top Çizimi</h1>
 
-  <circle cx="0" cy="20" r="70" fill="#D1495B" />
+  <svg width="200" height="200" viewBox="-100 -100 200 200">
+    <!-- Kesme Yolu Tanımlanıyor -->
+    <clipPath id="ball">
+      <!-- Kesme için bir daire -->
+      <circle cx="0" cy="20" r="80" />
+    </clipPath>
 
-  <polyline
-    clip-path="url(#ball)"
-    points="-120 40 -80 0 -40 40 0 0 40 40 80 0 120 40"
-    fill="none"
-    stroke="#9C2D2A"
-    stroke-width="20"
-  />
+    <!-- Ana Daire (Topun Gövdesi) -->
+    <circle cx="0" cy="20" r="80" fill="#FFB703" /> <!-- Yeni Renk: Sarı-Turuncu -->
 
-  <circle
-    cx="0"
-    cy="-75"
-    r="12"
-    fill="none"
-    stroke="#F79257"
-    stroke-width="2"
-  />
-  <rect x="-17.5" y="-65" width="35" height="20" fill="#F79257" />
-</svg>
+    <!-- Zigzag Çizgi -->
+    <polyline
+      clip-path="url(#ball)"
+      points="-120 50 -80 -10 -40 50 0 -10 40 50 80 -10 120 50"
+      fill="none"
+      stroke="#FB8500" <!-- Yeni Renk: Turuncu -->
+      stroke-width="15"
+    />
+
+    <!-- Küçük Daire (Üst Kısım) -->
+    <circle
+      cx="0"
+      cy="-75"
+      r="10"
+      fill="none"
+      stroke="#219EBC" <!-- Yeni Renk: Açık Mavi -->
+      stroke-width="3"
+    />
+
+    <!-- Dikdörtgen (Üst Kısımdaki Bağlantı) -->
+    <rect x="-15" y="-70" width="30" height="18" fill="#219EBC" />
+
+    <!-- Yeni Eklenen: Merkezi Nokta -->
+    <circle cx="0" cy="20" r="5" fill="#023047" /> <!-- Renk: Koyu Mavi -->
+  </svg>
+
+  <!-- Link Ekleme -->
+  <hr>
+  <p>
+    SVG örnekleri görüntülemek için 
+    <a href="svg.html" target="_blank">buraya tıklayın</a>.
+  </p>
+</body>
 </html>
