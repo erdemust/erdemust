@@ -1,0 +1,101 @@
+ <!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Örnekleri</title>
+</head>
+<body>
+  <h1>SVG Grafik Örnekleri</h1>
+
+  <p>
+    Aşağıda, SVG kullanarak oluşturulmuş farklı şekiller, yollar ve metin örnekleri yer almaktadır. Her biri SVG'nin farklı bir özelliğini göstermektedir.
+  </p>
+
+  <!-- SVG Örnek 1: Temel Şekiller -->
+  <h2>Temel Şekiller</h2>
+  <svg width="600" height="220" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="50,10 0,190 100,190" fill="lime" />
+    <rect width="150" height="100" x="120" y="50" fill="blue" />
+    <circle r="45" cx="350" cy="100" fill="red" />
+    <text x="420" y="100" fill="red">SVG'yi Seviyorum!</text>
+  </svg>
+
+  <!-- SVG Örnek 2: Çizgi ile Yol -->
+  <h2>Yol (Path) Elemanı</h2>
+  <svg height="210" width="400" xmlns="http://www.w3.org/2000/svg">
+    <path d="M150 5 L75 200 L225 200 Z"
+          style="fill:none;stroke:green;stroke-width:3" />
+  </svg>
+
+  <!-- SVG Örnek 3: Şeffaf Dikdörtgen -->
+  <h2>Şeffaf Dikdörtgen</h2>
+  <svg width="300" height="170" xmlns="http://www.w3.org/2000/svg">
+    <rect width="150" height="150" x="10" y="10"
+          style="fill:blue;stroke:pink;stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9" />
+  </svg>
+
+  <!-- SVG Örnek 4: Saydamlık ile Daire -->
+  <h2>Saydamlık ile Daire</h2>
+  <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+    <circle r="45" cx="50" cy="50" fill="red" stroke="green" stroke-width="3" opacity="0.5" />
+  </svg>
+
+  <!-- SVG Örnek 5: Çoklu Çizgi (Polyline) -->
+  <h2>Çoklu Çizgi</h2>
+  <svg height="210" width="500" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="0,0 50,150 100,75 150,50 200,140 250,140"
+              style="fill:none;stroke:green;stroke-width:3" />
+  </svg>
+
+  <!-- SVG Örnek 6: Elips -->
+  <h2>Elips</h2>
+  <svg height="140" width="500" xmlns="http://www.w3.org/2000/svg">
+    <ellipse rx="100" ry="50" cx="120" cy="80"
+             style="fill:yellow;stroke:green;stroke-width:3" />
+  </svg>
+
+  <!-- SVG Örnek 7: Dikey Çizgi -->
+  <h2>Dikey Çizgi</h2>
+  <svg height="210" width="300" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="0" x2="0" y2="200" style="stroke:red;stroke-width:14" />
+  </svg>
+
+  <!-- SVG Örnek 8: Çokgen -->
+  <h2>Çokgen</h2>
+  <svg height="260" width="500" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="220,10 300,210 170,250 123,234"
+             style="fill:lime;stroke:purple;stroke-width:3" />
+  </svg>
+
+  <!-- SVG Örnek 9: İşaretçili Çizgi -->
+  <h2>İşaretçi (Marker) ile Çizgi</h2>
+  <svg height="250" width="350" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="circle" markerWidth="8" markerHeight="8" refX="5" refY="5">
+        <circle cx="5" cy="5" r="3" fill="black" />
+      </marker>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="black" />
+      </marker>
+    </defs>
+    <line x1="10" y1="10" x2="300" y2="200" stroke="red" stroke-width="3"
+          marker-start="url(#circle)" marker-end="url(#arrow)" />
+  </svg>
+
+  <!-- SVG Örnek 10: Döndürülmüş Metin -->
+  <h2>Döndürülmüş Metin</h2>
+  <svg height="40" width="200">
+    <text x="5" y="30" fill="red" font-size="35" rotate="30">SVG'yi Seviyorum!</text>
+  </svg>
+
+  <!-- SVG Örnek 11: Yol Üzerinde Metin -->
+  <h2>Yol Üzerinde Metin</h2>
+  <svg height="200" width="350" xmlns="http://www.w3.org/2000/svg">
+    <path id="lineAC" d="M 30 180 q 150 -250 300 0" stroke="blue" stroke-width="2" fill="none"/>
+    <text style="fill:red;font-size:25px;">
+      <textPath href="#lineAC" startOffset="80"> Okumayı Seviyorum!</textPath>
+    </text>
+  </svg>
+</body>
+</html>
