@@ -1,60 +1,28 @@
 <html>
-    <body> 
-        
-        <svg
-  width="600px"
-  height="600px"
-  viewBox="-300 -300 600 600"
-  xmlns="http://www.w3.org/2000/svg"
-  xmlns:xlink="http://www.w3.org/1999/xlink">
-  <title>SVG LEGO YAPIMI </title>
-  <desc> CSS ve SVG ile Demo</desc>
+<h1> Son Hali </h1>
+ <svg width="200" height="200" viewBox="-100 -100 200 200">
+  <clipPath id="ball">
+    <circle cx="0" cy="20" r="70" />
+  </clipPath>
 
-  <defs>
-    <g id="segment" class="segment">
-      <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z" />
-      <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10" />
-    </g>
-    <g id="quadrant">
-      <use href="#segment" />
-      <use href="#segment" transform="rotate(18)" />
-      <use href="#segment" transform="rotate(36)" />
-      <use href="#segment" transform="rotate(54)" />
-      <use href="#segment" transform="rotate(72)" />
-    </g>
-    <g id="petals">
-      <use href="#quadrant" />
-      <use href="#quadrant" transform="rotate(90)" />
-      <use href="#quadrant" transform="rotate(180)" />
-      <use href="#quadrant" transform="rotate(270)" />
-    </g>
-    <radialGradient
-      id="fade"
-      cx="0"
-      cy="0"
-      r="200"
-      gradientUnits="userSpaceOnUse">
-      <stop id="fade-stop-1" offset="33%" />
-      <stop id="fade-stop-2" offset="95%" />
-    </radialGradient>
-  </defs>
+  <circle cx="0" cy="20" r="70" fill="#D1495B" />
 
-  <text id="heading" x="-280" y="-270">SVG demonstration</text>
-  <text id="caption" x="-280" y="-250">
-    Move your mouse pointer over the flower.
-  </text>
+  <polyline
+    clip-path="url(#ball)"
+    points="-120 40 -80 0 -40 40 0 0 40 40 80 0 120 40"
+    fill="none"
+    stroke="#9C2D2A"
+    stroke-width="20"
+  />
 
-  <g id="flower">
-    <circle
-      id="overlay"
-      cx="0"
-      cy="0"
-      r="200"
-      stroke="none"
-      fill="url(#fade)" />
-    <use id="outer-petals" href="#petals" />
-    <use id="inner-petals" href="#petals" transform="rotate(9) scale(0.33)" />
-  </g>
+  <circle
+    cx="0"
+    cy="-75"
+    r="12"
+    fill="none"
+    stroke="#F79257"
+    stroke-width="2"
+  />
+  <rect x="-17.5" y="-65" width="35" height="20" fill="#F79257" />
 </svg>
-    </body>
-</html> 
+</html>
