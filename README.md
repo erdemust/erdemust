@@ -1,38 +1,51 @@
+<html>
+  <h1>Merhaba</h1>
+  <svg width="100" height="100" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="25" fill="red" />
+  </svg>
+</html>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>SVG with Internal CSS</title>
-    <style>
-        /* Define gradient styles */
-        .gradient {
-            fill: url(#grad1);
-        }
-
-        /* Define text styles */
-        .text {
-            fill: #ffffff;
-            font-size: 45px;
-            font-family: Verdana;
-        }
-    </style>
-</head>
-
-<body>
-    <svg height="130" width="500">
-        <defs>
-            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" 
-                      style="stop-color:rgb(102, 255, 0); stop-opacity:1" />
-                <stop offset="100%" 
-                      style="stop-color:rgb(0, 255, 140); stop-opacity:1" />
-            </linearGradient>
-        </defs>
-        <ellipse cx="100" cy="70" 
-                 rx="85" ry="55" class="gradient" />
-        <text class="text" x="50" y="86">GFG</text>
-    </svg>
-</body>
-
+<html>
+  <h2>Merhaba</h2>
+ <svg width="200" height="200">
+  <circle
+    cx="100"
+    cy="120"
+    r="70"
+    fill="#D1495B"
+  />
+</svg>
+</html>
+<html>
+<h3>Merhaba</h3>
+<svg width="200" height="200">
+  <circle
+    cx="100"
+    cy="120"
+    r="70"
+    fill="#D1495B"
+  />
+  <rect
+    x="82"
+    y="35"
+    width="36"
+    height="20"
+    fill="#F79257"
+  />
+</svg>
+ </htm>
+ <html>
+ <h1> bomba
+<svg width="200" height="200">
+  <circle cx="100" cy="120" r="70" fill="#D1495B" />
+  <rect x="82" y="35" width="36" height="20" fill="#F79257" />
+  <circle
+    cx="100"
+    cy="25"
+    r="12"
+    fill="none"
+    stroke="#F79257"
+    stroke-width="2"
+  />
+</svg>
 </html>
