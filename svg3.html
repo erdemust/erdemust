@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generatif SVG Sanatı</title>
+  <style>
+    /* Sayfa margin ve overflow özelliğini sıfırlıyoruz */
+    body { margin: 0; overflow: hidden; }
+    
+    /* SVG'nin tam ekran görünmesini sağlıyoruz */
+    svg { display: block; }
+  </style>
+</head>
+<body>
+  <!-- SVG çizimlerini ekleyeceğimiz konteyner -->
+  <div id="container"></div>
+
+  <script>
+    // Rastgele bir sayı üreten fonksiyon
+    function getRandom(min, max) {
+      return Math.random() * (max - min) + min;  // min ve max arasındaki değeri döner
+    }
+
+    // Rastgele renk üreten fonksiyon (HSL formatında)
+    function getRandomColor() {
+      const hue = getRandom(0, 360);  // Hue: Renk tonu
+      const saturation = getRandom(50, 100);  // Doygunluk
+      const lightness = getRandom(40, 70);  // Aydınlık
+      return `hsl(${hue}, ${saturation}%, ${lightness}%)`;  // HSL formatında renk döner
+    }
+
+    // Rastgele bir SVG şekli (daire, dikdörtgen, çizgi) üreten fonksiyon
+    function generateRandomShape(svg) {
+      // Rastgele bir şekil tipi seçiyoruz (circle, rect, line)
+      const shapeType = ['circle', 'rect', 'line'][Math.floor(Math.random() * 3)];
+      
+      switch(shapeType) {
+        case 'circle':
+          // Daire için rastgele koordinatlar ve boyutlar
+          const cx = getRandom(50, 950);
+          const cy = getRandom(50, 950);
+          const r = getRandom(10, 100);
+          const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+          circle.setAttribute('cx', cx);  // Dairenin merkezinin X koordinatı
+          circle.setAttribute('cy', cy);  // Dairenin merkezinin Y koordinatı
+          circle.setAttribute('r', r);  // Yarıçap
+          circle.setAttribute('fill', getRandomColor());  // Renk
+          circle.setAttribute('opacity', getRandom(0.1, 0.7));  // Şeffaflık
+          svg.appendChild(circle);  // Şekli SVG'ye ekle
+          break;
+
+        case 'rect':
+          // Dikdörtgen için rastgele koordinatlar ve boyutlar
+          const x = getRandom(50, 950);
+          const y = getRandom(50, 950);
+          const width = getRandom(20, 150);
+          const height = getRandom(20, 150);
+          const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+          rect.setAttribute('x', x);  // Dikdörtgenin sol üst köşesinin X koordinatı
+          rect.setAttribute('y', y);  // Dikdörtgenin sol üst köşesinin Y koordinatı
+          rect.setAttribute('width', width);  // Genişlik
+          rect.setAttribute('height', height);  // Yükseklik
+          rect.setAttribute('fill', getRandomColor());  // Renk
+          rect.setAttribute('opacity', getRandom(0.1, 0.7));  // Şeffaflık
+          svg.appendChild(rect);  // Şekli SVG'ye ekle
+          break;
+
+        case 'line':
+          // Çizgi için rastgele başlangıç ve bitiş noktaları
+          const x1 = getRandom(0, 1000);
+          const y1 = getRandom(0, 1000);
+          const x2 = getRandom(0, 1000);
+          const y2 = getRandom(0, 1000);
+          const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+          line.setAttribute('x1', x1);  // Çizginin başlangıç X koordinatı
+          line.setAttribute('y1', y1);  // Çizginin başlangıç Y koordinatı
+          line.setAttribute('x2', x2);  // Çizginin bitiş X koordinatı
+          line.setAttribute('y2', y2);  // Çizginin bitiş Y koordinatı
+          line.setAttribute('stroke', getRandomColor());  // Çizgi rengi
+          line.setAttribute('stroke-width', getRandom(1, 5));  // Çizgi kalınlığı
+          line.setAttribute('opacity', getRandom(0.1, 0.5));  // Şeffaflık
+          svg.appendChild(line);  // Şekli SVG'ye ekle
+          break;
+      }
+    }
+
+    // SVG konteynerini oluşturuyoruz
+    const svgContainer = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svgContainer.setAttribute('width', '100vw');  // SVG genişliği: Ekran genişliği
+    svgContainer.setAttribute('height', '100vh');  // SVG yüksekliği: Ekran yüksekliği
+    svgContainer.setAttribute('viewBox', '0 0 1000 1000');  // Görünüm kutusu (viewBox)
+    document.getElementById('container').appendChild(svgContainer);  // SVG'yi HTML içinde ilgili alana ekliyoruz
+
+    // 100 rastgele şekil oluşturuyoruz
+    for (let i = 0; i < 100; i++) {
+      generateRandomShape(svgContainer);  // Her defasında yeni bir şekil ekliyoruz
+    }
+
+    // SVG şekillerini yeniden oluşturmak için tıklama olayını dinliyoruz
+    document.getElementById('container').addEventListener('click', function() {
+      svgContainer.innerHTML = '';  // SVG'yi temizliyoruz
+      for (let i = 0; i < 100; i++) {
+        generateRandomShape(svgContainer);  // Yeni rastgele şekiller ekliyoruz
+      }
+    });
+  </script>
+</body>
+</html>
