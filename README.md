@@ -10,11 +10,12 @@ JavaScript kullanımına ihtiyaç yoktur.
 HTML5 <svg> etiketi SVG grafikleri için taşıyıcı görevi görür.
 
 SVG etiketi ile çizgi, dikdörtgen, çember, daire vb. çizim yöntemleri vardır.
-```
 code blocks for commands
 
 
 SVG çember ve daire çizmek
+```
+
 <!DOCTYPE HTML>
 <html lang="tr">
 
@@ -43,7 +44,8 @@ SVG dikdörtgen
 ```
 
 SVG yuvarlak dikdörtgen
-```<svg width="400" height="180">
+```
+<svg width="400" height="180">
   <rect x="50" y="20" rx="20" ry="20" width="150" height="150"
   style="fill:blue;stroke:black;stroke-width:5;opacity:0.5" />
 </svg>
@@ -52,10 +54,15 @@ SVG yuvarlak dikdörtgen
 
 
 SVG polygon yıldız
+
+ ```
 <svg width="300" height="200">
   <polygon points="100,10 40,198 190,78 10,78 160,198"
   style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
 </svg>
+ 
+```
+
 SVG örnek
 <svg height="130" width="500">
   <defs>
