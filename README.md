@@ -1,4 +1,4 @@
-<svg class="gingerbread" width="200" height="200" viewBox="-100 -100 200 200">
+"""<svg class="gingerbread" width="200" height="200" viewBox="-100 -100 200 200">
   <circle class="body" cx="0" cy="-50" r="30" />
 
   <circle class="eye" cx="-12" cy="-55" r="3" />
@@ -11,4 +11,4 @@
 
   <circle class="button" cx="0" cy="-10" r="5" />
   <circle class="button" cx="0" cy="10" r="5" />
-</svg>
+</svg>"""
