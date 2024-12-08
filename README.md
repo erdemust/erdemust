@@ -64,6 +64,7 @@ SVG polygon yıldız
 ```
 
 SVG örnek
+ ```
 <svg height="130" width="500">
   <defs>
     <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -74,19 +75,25 @@ SVG örnek
   <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
   <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
 </svg>
-SVG ve Canvas arasındaki farklar
-SVG XML tabanlı grafik çizimi için kullanılan bir dildir.
+```
 
-Canvas JavaScript ile grafik çizimi yapmak için kullanılan bir etikettir.
 
-SVG XML tabanlı olduğundan SVG etiketlerine JavaScript DOM ile olay (tıklama, üzerine gelme vb.) ekleyebiliriz.
 
-SVG ve Canvas karşılaştırması
-Canvas	SVG
+#SVG ve Canvas arasındaki farklar
+
+##SVG XML tabanlı grafik çizimi için kullanılan bir dildir.
+
+##Canvas JavaScript ile grafik çizimi yapmak için kullanılan bir etikettir.
+
+#SVG XML tabanlı olduğundan SVG etiketlerine JavaScript DOM ile olay (tıklama, üzerine gelme vb.) ekleyebiliriz.
+
+ 
+#Canvas	 
 Sayfayı yakınlaştırınca çözünürlük bozulur.
 Çizim nesnelerine JavaScript olayı eklenemez.
 Çizim .png veya .jpg olarak kaydedilebilir.
 Yoğun grafik işlemi olan oyunlar için uygundur.
+#SVG
 Sayfayı yakınlaştırınca çözünürlük bozulmaz.
 Çizim nesnelerine JavaScript olayı eklenebilir.
 Çizim .png veya .jpg olarak kaydedilemez.
